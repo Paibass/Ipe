@@ -1,0 +1,74 @@
+.navbar{
+    background-color: #3f1c15;
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: space-between;
+}
+
+#logo{
+    width: 50px;
+}
+.contenedorIndice{
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 16px;
+}
+.contenedorIndice div{
+    padding: 5px;
+}
+
+.contendorNavegacion{
+    margin-right: 2%;
+}
+
+.navbar ul{
+    list-style-type: none;
+    overflow: hidden;
+
+}
+
+.navbar ul li{
+    float: left;
+}
+
+.navbar ul li a{
+    border-radius: 5px 5px 0 0;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.navbar ul li a:hover{
+    background-color: #c09d15;
+}
+
+.submenu{
+    display: none;
+    position: absolute;
+    background-color: #c09d15;
+    z-index: 1;
+}
+
+.submenu li a{
+    padding: 12px 14px;
+}
+
+.navbar ul li:hover .submenu{
+    display: block;
+}
+
+.submenu li a:hover{
+    background-color: #977b0f;
+}
+.amarillo{
+    color: #e3c015;
+}
+.amarillo:hover{
+    color: white;
+}

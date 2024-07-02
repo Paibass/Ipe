@@ -1,0 +1,280 @@
+@import url(reset.css);
+@import url(navbar.css);
+@import url(niveles.css);
+main{
+    padding-top: 2em;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("https://elizalde.edu.ar/wp-content/uploads/2024/02/cropped-IMG_20221115_175030-scaled-1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: Muli, serif;
+    font-size: 16px;
+    font-weight: 400;
+    align-items: center;
+}
+
+.Titulo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.Titulo h1{
+    font-size: 4rem;
+    letter-spacing: 3px;
+}
+.Titulo span{
+    color: #e3c015;
+}
+
+.contendido{
+    padding-top: 5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contenedorCards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card{
+    width: 360px;
+    height: 350px;
+    background-color: #f5f5dc;
+    color: #3f1c15;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.card:hover{
+    box-shadow: 0 0 20px 7px rgb(0, 0, 0);
+    transform: scale(1.03);
+}
+
+.cardTexto{
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Merriweather", serif;
+}
+
+.card .TituloCard{
+    font-size: 3rem;
+}
+
+.card .descCard{
+    min-height: 130px;
+    text-align: center;
+    padding: 15px;
+}
+
+.botonNivel{
+    text-align: center;
+    height: 50px;
+    width: 50%;
+    background-color: #3f1c15;
+    border-radius: 10px;
+}
+
+.botonNivel span{
+    font-weight: bold;
+    line-height: 50px;
+    color: #c09d15;
+}
+
+.botonNivel span:hover{
+    color: #e3c015;
+}
+
+.inscripcion{
+    padding-top: 3%;
+    align-self: center;
+}
+
+.inscripcion div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 250px;
+    border-radius: 15px;
+    background-color: #a5b38c;
+}
+
+.inscripcion div:hover{
+    background-color: #93a86b;
+    box-shadow: 0 0 20px 7px rgb(0, 0, 0);
+    transform: scale(1.03);
+}
+
+.inscripcion div a{
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+}
+
+.contenedorForm{
+    background-color: #f5f5dc;
+    width: 40%;
+    text-align: center;
+    margin-top: 4%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenedorForm2{
+    background-color: #f5f5dc;
+    height: 100%;
+    width: 40%;
+    text-align: center;
+    margin-top: 4%;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 4%;
+}
+
+.contenedorForm2 h3{
+    font-size: 2.5rem;
+    color: #3f1c15;
+}
+
+.contenedorForm h3{
+    font-size: 2.5rem;
+    color: #3f1c15;
+}
+
+.contenedorForm .error{
+    display: flex;
+    width: 50%;
+    align-self: center;
+    height: 50px;
+    color: #e3c015;
+    background-color: #1e3231;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+.formUser{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formUser label{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.formUser input{
+    width: 80%;
+    height: 45px;
+    font-size: 1.4rem;
+    margin: 15px;
+    color: #3f1c15;
+}
+.formUser input:focus{
+    transform: scale(1.03);
+}
+
+.formUser button{
+    margin-top: 4%;
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #3f1c15 ;
+    color: #e3c015;
+    cursor: pointer;
+}
+.formUser button:hover{
+    transform: scale(1.03);
+}
+.contenedorForm p{
+    margin-top: 4%;
+}
+.opcionRegistro{
+    background-color: #3f1c15;
+    width: 60%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin: 15px;
+    border-radius: 15px;
+}
+.opcionRegistro a{
+    color: #e3c015;
+    font-weight: bold;
+    font-size: 1.4rem;
+
+}
+.opcionRegistro:hover{
+    box-shadow: 0 0 2px 2px rgb(0, 0, 0);
+    transform: scale(1.03);
+}
+.contenidoEstado{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.estado{
+    margin-top: 5%;
+    text-align: center;
+    border-radius: 15px;
+    width: 50%;
+    height: 100px;
+    background-color: #3f1c15;
+    color: #e3c015;
+    font-weight: bold;
+    font-size: 4rem;
+}
+
+.estado a{
+    color: #e3c015;
+}
+
+.error{
+    display: flex;
+    width: 50%;
+    align-self: center;
+    height: 50px;
+    color: #e3c015;
+    background-color: #1e3231;
+    align-items: center;
+    border-radius: 15px;
+    justify-content: center;
+}
+.formGroup{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.formGroup input{
+    width: 20px
+}

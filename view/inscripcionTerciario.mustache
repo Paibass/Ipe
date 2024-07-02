@@ -1,0 +1,48 @@
+<main>
+    <div class="Titulo">
+        <h1><span>I</span>nscripcion</h1>
+    </div>
+    <div class="contenedorForm">
+        <h3>Completa el formulario</h3>
+            <form class="formUser" action="/inscripcion/procesarInscripcion" method="post">
+                <input name="id" type="text" value="{{id_usuario}}" style="display: none">
+                <div class="formGroup">
+                    <input type="radio" id="biologia" name="carrera" value="Biologia">
+                    <label for="biologia">Biología</label><br>
+                    <input type="radio" id="ciencia_sagrada" name="carrera" value="Ciencia Sagrada">
+                    <label for="ciencia_sagrada">Ciencia Sagrada</label><br>
+
+                    <input type="radio" id="filosofia" name="carrera" value="Filosofia">
+                    <label for="filosofia">Filosofía</label><br>
+
+                    <input type="radio" id="geografia" name="carrera" value="Geografia">
+                    <label for="geografia">Geografía</label><br>
+
+                    <input type="radio" id="historia" name="carrera" value="Historia">
+                    <label for="historia">Historia</label><br>
+
+                    <input type="radio" id="nivel_inicial" name="carrera" value="Nivel Inicial">
+                    <label for="nivel_inicial">Nivel Inicial</label><br>
+
+                    <input type="radio" id="lengua_literatura" name="carrera" value="Lengua y Literatura">
+                    <label for="lengua_literatura">Lengua y Literatura</label><br>
+
+                    <input type="radio" id="matematica" name="carrera" value="Matematica">
+                    <label for="matematica">Matemática</label><br>
+
+                    <input type="radio" id="educacion_primaria" name="carrera" value="Educacion Primaria">
+                    <label for="educacion_primaria">Educación Primaria</label><br>
+                </div>
+                <div class="formGroup">
+                    <input type="radio" id="mañana" name="horario" value="Mañana">
+                    <label for="biologia">Mañana</label><br>
+                    <input type="radio" id="Tarde" name="horario" value="Tarde">
+                    <label for="Tarde">Tarde</label><br>
+                    <input type="radio" id="Noche" name="horario" value=Noche">
+                    <label for="Noche">Noche</label><br>
+                </div>
+                <label for="file">Ticket De Pago</label>
+                <input id=file type="file">
+                <button type="submit">Enviar</button>
+            </form>
+</main>

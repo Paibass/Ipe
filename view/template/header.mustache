@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Instituto Padre Elizalde</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" id="bravada-googlefonts-css" href="//fonts.googleapis.com/css?family=Muli%3A%7CPlayfair+Display%3A%7CMuli%3A100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900%7CPlayfair+Display%3A700&amp;ver=1.1.1" media="all">
+<link rel="stylesheet" href="/public/css/style.css">
+
+<body>
+<header>
+    <nav class="navbar">
+        <div id="contenedorLogo">
+            <a href="/">
+                <div class="contenedorIndice">
+                    <div>
+                        <img id="logo" src="https://elizalde.edu.ar/wp-content/uploads/2024/02/cropped-LogoIPE.png" alt="logo">
+                    </div>
+                    <div>
+                        <h3>Instituto Padre elizalde</h3>
+                        <p>25 de mayo 125(Ciudadela - Prov. BS. AS.)</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="contendorNavegacion">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li><a href="inicio/institucion">Institución</a></li>
+                <li>
+                    <a href="#niveles">Niveles</a>
+                    <ul class="submenu">
+                        <li><a href="/nivel/inicial">Inicial</a></li>
+                        <li><a href="/nivel/primario">Primario</a></li>
+                        <li><a href="/nivel/secundario">Secundario</a></li>
+                        <li><a href="/nivel/terciario">Terciario</a></li>
+                    </ul>
+                </li>
+                <li><a href="/inscripcion/preinscripcion">Inscripción</a></li>
+                <li><a href="/inscripcion/tuPerfil">{{#usuario}}Hola <span class="amarillo">{{nombre}}!</span>{{/usuario}}{{^usuario}}Perfil{{/usuario}}</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<script>
+    function adjustBodyHeight() {
+        var body = document.body;
+        var html = document.documentElement;
+
+        // Calcula la altura máxima entre el cuerpo y el html
+        var maxHeight = Math.max(body.scrollHeight, body.offsetHeight,
+                html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+        // Establece la altura del body dinámicamente
+        body.style.minHeight = maxHeight + 'px';
+    }
+
+    // Llama a la función una vez que el documento esté completamente cargado
+    document.addEventListener('DOMContentLoaded', adjustBodyHeight);
+
+    // También ajusta la altura del body cuando la ventana cambia de tamaño
+    window.addEventListener('resize', adjustBodyHeight);
+</script>
