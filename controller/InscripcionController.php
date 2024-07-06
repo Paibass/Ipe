@@ -18,7 +18,8 @@ class InscripcionController{
             }else{
             $user= $_SESSION['usuario'][0];
             $check = $this->model->existePreinscripcion($user['id_usuario']);
-            if($check){
+            var_dump($check);
+            if(!$check){
                 if($user['tipo'] == "1")
                 {
                     $this->presenter->render("view/preinscripcionTerciario.mustache", ['user' => $user]);
@@ -44,6 +45,9 @@ class InscripcionController{
         if (isset($_SESSION['usuario'])) {
             $user = $_SESSION['usuario'][0];
             $estado = $this->model->verEstado($user['id_usuario']);
+            if ($estado == null){
+                $estado = 'No hay tramites iniciados';
+            }
             $this->presenter->render("view/miPerfilview.mustache", ['user' => $user, 'estado' => $estado]);
         } else {
             header('location: /user/loginView');
@@ -81,8 +85,13 @@ class InscripcionController{
             if($check){
                 if($user['tipo'] == "1")
                 {
+
                     $this->presenter->render("view/inscripcionTerciario.mustache", ['user' => $user]);
                 }
+            }else{
+                $_SESSION['msg'] = "Ya tenes una inscripcion en curso!";
+                $msg = $_SESSION['msg'];
+                $this->presenter->render("view/errorView.mustache", ["msg" => $msg]);
             }
         }
         }

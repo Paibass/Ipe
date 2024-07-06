@@ -27,38 +27,54 @@ class InscripcionModel{
     public function existePreinscripcion($id){
         $sql = "SELECT id_inscripcion FROM InscripcionesUsuarios WHERE id_usuario = '$id'";
         $idIns =  $this->database->query($sql);
-        $idIns = $idIns[0];
-        $idIns = $idIns['id_inscripcion'];
-        $sql = "SELECT estado FROM Inscripciones WHERE id_inscripcion = '$id' and estado = 'Iniciado'";
-        if($this->database->query($sql) == null){
-            return true;
-        }else{
+        if($idIns == null){
             return false;
+        }else{
+            $idIns = $idIns[0];
+            $idIns = $idIns['id_inscripcion'];
+            $sql = "SELECT estado FROM Inscripciones WHERE id_inscripcion = '$idIns' and estado = 'Iniciado'";
+            var_dump($sql);
+            if($this->database->query($sql) == null){
+                return false;
+            }else{
+                return true;
+            }
         }
+
     }
 
     public function verEstado($id){
         $sql = "SELECT id_inscripcion FROM InscripcionesUsuarios WHERE id_usuario = '$id'";
         $idIns =  $this->database->query($sql);
-        $idIns = $idIns[0];
-        $idIns = $idIns['id_inscripcion'];
-        $sql = "SELECT estado FROM Inscripciones WHERE id_inscripcion = '$idIns'";
-        $resul =  $this->database->query($sql);
-        $resul = $resul[0];
-        return $resul;
+        if($idIns == null){
+            return null;
+        }else{
+            $idIns = $idIns[0];
+            $idIns = $idIns['id_inscripcion'];
+            $sql = "SELECT estado FROM Inscripciones WHERE id_inscripcion = '$idIns'";
+            $resul =  $this->database->query($sql);
+            $resul = $resul[0];
+            return $resul;
+        }
+
     }
 
     public function existeInscripcion($id){
         $sql = "SELECT id_inscripcion FROM InscripcionesUsuarios WHERE id_usuario = '$id'";
         $idIns =  $this->database->query($sql);
-        $idIns = $idIns[0];
-        $idIns = $idIns['id_inscripcion'];
-        $sql = "SELECT estado FROM Inscripciones WHERE id_inscripcion = '$id' and estado = 'En Curso'";
-        if($this->database->query($sql) == null){
-            return true;
-        }else{
+        if($idIns == null){
             return false;
+        }else{
+            $idIns = $idIns[0];
+            $idIns = $idIns['id_inscripcion'];
+            $sql = "SELECT estado FROM Inscripciones WHERE id_inscripcion = '$idIns' and estado = 'En Curso'";
+            if($this->database->query($sql) == null){
+                return true;
+            }else{
+                return false;
+            }
         }
+
     }
 
     public function procesarInscripcion(){
@@ -66,11 +82,11 @@ class InscripcionModel{
             $id = $_POST["id"];
             $sql = "SELECT id_inscripcion FROM InscripcionesUsuarios WHERE id_usuario = '$id'";
             $idIns =  $this->database->query($sql);
+
             $idIns = $idIns[0];
             $idIns = $idIns['id_inscripcion'];
-            $sql = "UPDATE Inscripciones set estado = 'En Curso' WHERE id_inscripcion = '$id'";
-            $this->database->execute($sql);
-            return true;
+            $sql = "UPDATE ipe.Inscripciones set estado = 'En Curso' WHERE id_inscripcion = '$idIns'";
+            return $this->database->execute($sql);
         }
     }
 }

@@ -4,8 +4,10 @@
     </div>
     <div class="contenedorForm">
         <h3>Completa el formulario</h3>
+        {{#user}}
             <form class="formUser" action="/inscripcion/procesarInscripcion" method="post">
                 <input name="id" type="text" value="{{id_usuario}}" style="display: none">
+        {{/user}}
                 <div class="formGroup">
                     <input type="radio" id="biologia" name="carrera" value="Biologia">
                     <label for="biologia">Biología</label><br>
