@@ -3,13 +3,14 @@
     <div class="Titulo">
         <h1><span>T</span>u <span>P</span>erfil {{nombre}}</h1>
     </div>
- {{/user}}
+
     <div class="contendido">
         <div class="contenidoEstado">
             {{#estado}}
                 <div class="estado">{{estado}}</div>
             {{/estado}}
         </div>
+ {{/user}}
         <form action="/inscripcion/activarFecha" method="post">
             <input type="checkbox" name="fecha" value="1">CAMINO BUENO
             <button type="submit">ACTIVAR</button>
