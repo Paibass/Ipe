@@ -11,6 +11,11 @@ class InscripcionController{
 
     public function preinscripcion(){
         if(isset($_SESSION['usuario'])){
+            if($_SESSION['fecha']){
+                $_SESSION['msg'] = "No abrieron las preinscripciones";
+                $msg = $_SESSION['msg'];
+                $this->presenter->render("view/errorView.mustache", ["msg" => $msg]);
+            }else{
             $user= $_SESSION['usuario'][0];
             $check = $this->model->existePreinscripcion($user['id_usuario']);
             var_dump($check);
@@ -38,6 +43,11 @@ class InscripcionController{
     public function tuPerfil()
     {
         if (isset($_SESSION['usuario'])) {
+            if($_SESSION['fecha']){
+                $_SESSION['msg'] = "No abrieron las inscripciones";
+                $msg = $_SESSION['msg'];
+                $this->presenter->render("view/errorView.mustache", ["msg" => $msg]);
+            }else{
             $user = $_SESSION['usuario'][0];
             $estado = $this->model->verEstado($user['id_usuario']);
             if ($estado == null){
