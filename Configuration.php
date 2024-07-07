@@ -80,7 +80,7 @@ class Configuration
     public static function getDatabase()
     {
         $config = self::getConfig();
-        return new Database($config["servername"], $config["username"], $config["password"], $config["dbname"]);
+        return new Database($config["servername"], $config["username"], $config["password"], $config["dbname"], $config["port"]);
     }
 
     private static function getConfig()
